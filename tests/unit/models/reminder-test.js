@@ -10,7 +10,7 @@ test('it exists', function(assert) {
 });
 
 test('should return undefined without valid input', function(assert) {
-  const reminder = this.subject({})
+  const reminder = this.subject({});
 
-  assert.equal(reminder.get('name'), undefined, 'reminder attributes throw error if empty')
-})
+  assert.equal(reminder.get('name'), undefined, 'reminder attributes throw error if empty');
+});

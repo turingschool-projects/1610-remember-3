@@ -6,20 +6,8 @@ moduleForComponent('reminder-item', 'Integration | Component | reminder item', {
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{reminder-item}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#reminder-item}}
-      template block text
-    {{/reminder-item}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  let reminder = {title: 'title', date: 'today', notes: 'note'};
+  this.set('reminder', reminder);
+  this.render(hbs`{{reminder-item reminder=reminder}}`);
+  assert.equal(this.$('.reminder-item--notes').text(), 'note', 'reminder diplays note');
 });

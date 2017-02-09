@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.active {
+  color: #FF5722;
+
+  &:hover {
+    color: #FF5722;
+  }
+}
+
+a {
+  color: black;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #0FA3B1;
+    -webkit-transform:scale(0.5);
+    transform:scale(0.5);
+  }
+}
+
+.title {
+  margin: 0 auto;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.reminder-item--date, .reminder-item--notes {
+  font-weight: lighter;
+}

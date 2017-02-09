@@ -1,7 +1,5 @@
 <div class='spec-reminder-item'>
-  <h3>{{reminder.title}}</h3>
-    <p class="reminder-item--date">Date: {{reminder.date}}</p>
-  {{#if reminder.notes}}
-    <p class="reminder-item--notes">{{reminder.notes}}</p>
-  {{/if}}
+  {{#link-to "reminders.reminder" reminder}}
+    <h3>{{reminder.title}}</h3>
+  {{/link-to}}
 </div>

@@ -1,9 +1,9 @@
 {
-  "name": "RemEMBER",
+  "name": "remember",
   "version": "0.0.0",
-  "description": "A small Reminders/Todo app",
+  "description": "Small description for remember goes here",
   "license": "MIT",
-  "author": "Eric Sayler",
+  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"

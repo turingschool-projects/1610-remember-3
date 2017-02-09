@@ -2,6 +2,8 @@
 
 <div class='reminders-list'>
   {{#each model as |reminder|}}
-  {{reminder-item reminder=reminder}}
+    {{reminder-item reminder=reminder}}
   {{/each}}
 </div>
+
+{{#Link-to 'reminders.new' tagName='button'}} New Reminder {{/Link-to}}

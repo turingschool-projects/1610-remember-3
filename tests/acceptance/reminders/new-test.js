@@ -11,6 +11,6 @@ test('visiting /reminders/new', function(assert) {
     click('button');
   });
   andThen(function() {
-    assert.equal(currentURL(), '/reminders/new')
-  })
+    assert.equal(currentURL(), '/reminders/new');
+  });
 });

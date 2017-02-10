@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   classNames: ['new-reminder'],
 
   title: '',
-  date: new Date(),
+  date: '',
   notes: '',
 
   actions: {

@@ -3,8 +3,6 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'remember/tests/helpers/module-for-acceptance';
 
-import Ember from 'ember';
-
 moduleForAcceptance('Acceptance | reminders list');
 
 test('viewing the homepage', function(assert) {

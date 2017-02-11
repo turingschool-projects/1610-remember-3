@@ -1,5 +1,6 @@
 <div class='spec-reminder-item'>
-  {{#link-to 'reminders.reminder' reminder}}
-    <h3 class='spec-reminder-item--title'>{{reminder.title}}</h3>
+  {{#link-to "reminders.reminder" reminder}}
+    <h3>{{reminder.title}}</h3>
+    <p>{{moment-from-now reminder.date}}</p>
   {{/link-to}}
 </div>

@@ -13,6 +13,7 @@ body {
 }
 
 a {
+  text-decoration: none;
   color: black;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -31,5 +32,9 @@ a {
 }
 
 .reminder-item--date, .reminder-item--notes {
+  font-weight: lighter;
+}
+
+.new-reminder--heading {
   font-weight: lighter;
 }

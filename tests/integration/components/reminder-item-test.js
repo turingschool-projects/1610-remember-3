@@ -9,5 +9,5 @@ test('it renders', function(assert) {
   let reminder = {title: 'title', date: 'today', notes: 'note'};
   this.set('reminder', reminder);
   this.render(hbs`{{reminder-item reminder=reminder}}`);
-  assert.equal(this.$('.reminder-item--notes').text(), 'note', 'reminder diplays note');
+  assert.equal(this.$('.spec-reminder-item--title').text(), 'title', 'reminder diplays title');
 });

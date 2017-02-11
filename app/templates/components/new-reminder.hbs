@@ -1,12 +1,9 @@
-<div>
+<div class='new-reminder-box'>
   <h3 class='new-reminder--heading'> New Reminder </h3>
     <form class='new-reminder--form' {{action 'createReminder' on='submit'}}>
-      <label for='title'>Title: </label>
-      {{input name='title-input' type='text' value=title class="reminder-title"}} <br>
-      <label for='date-input'>Date: </label>
+      {{input name='title-input' placeholder='title' type='text' value=title class="reminder-title"}} <br>
       {{pikaday-input name='date-input' value=date onSelection=(action (mut date))}} <br>
-      <label for='notes'>Notes: </label>
-      {{textarea name='notes' type='text' value=notes class="reminder-notes"}} <br>
-      <button name='submit-btn' type="submit">Submit</button>
+      {{textarea name='notes' type='text' placeholder='notes' value=notes class="reminder-notes" cols='50' rows='5'}} <br>
+      <button class='btn btn-submit' name='submit-btn' type="submit">Submit</button>
     </form>
 </div>

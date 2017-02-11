@@ -1,10 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Oswald');
 
-body {
-  font-family: 'Lato', sans-serif;
+@mixin button-input-style {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  outline: 0;
+  font-size: 12px;
 }
 
-.active {
+
+.app-body {
+  margin-top: 100px;
+}
+
+.nav {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: inherit;
+}
+
+.application {
+  font-family: 'Lato', sans-serif;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+a.active {
   color: #FF5722;
 
   &:hover {
@@ -20,21 +43,150 @@ a {
 
   &:hover {
     color: #0FA3B1;
-    -webkit-transform:scale(0.5);
-    transform:scale(0.5);
   }
 }
 
-.title {
-  margin: 0 auto;
-  font-size: 36px;
-  font-weight: bold;
+.app-title {
+  display: inline-block;
+  margin-left: 60px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
 }
 
-.reminder-item--date, .reminder-item--notes {
-  font-weight: lighter;
+.reminder-item--notes {
+  font-weight: 300;
+  font-size: 18px;
+
 }
 
 .new-reminder--heading {
+  margin: 0;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 32px;
   font-weight: lighter;
+}
+
+
+.spec-reminder-list-item {
+  width: 400px;
+
+  .title {
+    padding-left: 40px;
+    padding-top: 5px;
+    font-weight: 400;
+  }
+
+  .date {
+    padding-left: 40px;
+    padding-bottom: 5px;
+    font-weight: 300;
+    color: #9E9E9E;
+  }
+}
+
+.reminders-list {
+  display: inline-block;
+  margin: 0 20px;
+  width: 400px;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.spec-reminder-display-item, .new-reminder {
+  margin-top: 10px;
+  position: fixed;
+  display: inline-block;
+  max-width: 480px;
+  padding: 0 20px;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 90%;
+}
+
+.reminder-item--title {
+  margin-top: 0;
+  font-family: 'Oswald', sans-serif;
+
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.reminder-item--date {
+  font-weight: 300;
+  color: #9E9E9E;
+}
+
+
+
+.btn {
+  @include button-input-style;
+  background-color: white;
+
+  &:hover {
+    filter: opacity(90%);
+  }
+
+
+
+}
+
+.btn-new {
+  margin-top: 30px;
+  margin-right: 60px;
+  margin-bottom: 10px;
+  float: right;
+  background-color: #2980b9;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+
+  &:hover {
+    background-color: #3498db;
+  }
+}
+
+.btn-submit {
+  background-color: #27ae60;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+
+  &:hover {
+    background-color: #2ecc71;
+  }
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  outline: 0;
+  border: 1px solid #bdc3c7;
+  font-size: 16px;
+}
+
+textarea {
+
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #bdc3c7;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #bdc3c7;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #bdc3c7;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #bdc3c7;
 }

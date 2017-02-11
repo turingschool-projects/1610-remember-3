@@ -1,6 +1,13 @@
 <section class="application">
-  <header>
-    <h1 class="title">Reminders</h1>
+  <header class='nav'>
+
+    {{#Link-to 'reminders'}}
+    <h1 class="app-title">rmndrs</h1>
+    {{/Link-to}}
+      {{#Link-to 'reminders.new' tagName='button' class='btn btn-new'}} New Reminder {{/Link-to}}
+      <hr />
   </header>
-  {{outlet}}
+  <section class='app-body'>
+    {{outlet}}
+  </section>
 </section>

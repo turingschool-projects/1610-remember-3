@@ -12,7 +12,7 @@ test('viewing the homepage', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders');
-    assert.equal($('.spec-reminder-item').length, 5);
+    assert.equal($('.spec-reminder-list-item').length, 5);
   });
 });
 
@@ -20,16 +20,9 @@ test('clicking on an individual item shows item data', function(assert) {
   server.createList('reminder', 5);
 
   visit('/');
-  click('.spec-reminder-item--title:first');
-
-  let title = server.db.reminders[0].title;
-  let date = server.db.reminders[0].date;
-  let notes = server.db.reminders[0].notes;
+  click('.spec-reminder-list-item--title:first');
 
   andThen(function() {
-    assert.equal(currentURL(), '/reminders/1');
-    assert.equal($('.spec-reminder-item--title:first').text().trim(), title);
-    assert.equal($('.spec-reminder-item--date:first').text().trim(), 'Date: ' + date);
-    assert.equal($('.spec-reminder-item--notes:first').text().trim(), notes);
+    assert.equal($('.spec-reminder-display-item').length, 1);
   });
 });

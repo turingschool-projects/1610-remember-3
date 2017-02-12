@@ -12,14 +12,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{new-reminder}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().replace(/\s/g, ''), 'NewReminderSubmit');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#new-reminder}}
-      template block text
-    {{/new-reminder}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

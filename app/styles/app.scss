@@ -47,7 +47,7 @@ a {
   text-align: center;
 }
 
-.reminder-item--notes {
+.spec-reminder-display-item--notes {
   font-size: 18px;
   font-weight: 300;
 }
@@ -63,13 +63,13 @@ a {
 .spec-reminder-list-item {
   width: 400px;
 
-  .title {
+  .spec-reminder-list-item--title {
     padding-top: 5px;
     padding-left: 40px;
     font-weight: 400;
   }
 
-  .date {
+  .spec-reminder-list-item--date {
     padding-bottom: 5px;
     padding-left: 40px;
     color: $date-display-color;
@@ -105,14 +105,14 @@ hr {
   border-top: 1px solid $border-hr-color;
 }
 
-.reminder-item--title {
+.rspec-reminder-display-item--title {
   margin-top: 0;
   font-family: 'Oswald', sans-serif;
   font-size: 32px;
   font-weight: 400;
 }
 
-.reminder-item--date {
+.spec-reminder-display-item--date {
   color: $date-display-color;
   font-weight: 300;
 }

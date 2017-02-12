@@ -1,7 +1,8 @@
-
 <div class='reminders-list'>
   {{#each sortedReminders as |reminder|}}
     {{reminder-item reminder=reminder}}
+  {{else}}
+     <p class='no-items-msg'>No Reminders to Display!</p>
   {{/each}}
 </div>
 

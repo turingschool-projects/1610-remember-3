@@ -1,70 +1,59 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Oswald');
-
-@mixin button-input-style {
-  margin: 10px 0;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  outline: 0;
-  font-size: 12px;
-}
-
+@import 'variables';
+@import 'mixins';
 
 .app-body {
   margin-top: 100px;
 }
 
 .nav {
-  background-color: white;
   position: fixed;
   top: 0;
   width: inherit;
+  background-color: white;
 }
 
 .application {
-  font-family: 'Lato', sans-serif;
   width: 1000px;
   margin: 0 auto;
-}
-
-a.active {
-  color: #FF5722;
-
-  &:hover {
-    color: #FF5722;
-  }
+  font-family: 'Lato', sans-serif;
 }
 
 a {
-  text-decoration: none;
-  color: black;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  color: $link-text-color;
+  text-decoration: none;
+
+  &.active {
+    color: $link-active-color;
+
+    &:hover {
+      color: $link-active-color;
+    }
+  }
 
   &:hover {
-    color: #0FA3B1;
+    color: $link-hover-color;
   }
 }
 
 .app-title {
   display: inline-block;
-  margin-left: 60px;
-  margin-bottom: 5px;
   margin-top: 20px;
+  margin-bottom: 5px;
+  margin-left: 60px;
   font-size: 48px;
   font-weight: 400;
   text-align: center;
 }
 
 .reminder-item--notes {
-  font-weight: 300;
   font-size: 18px;
-
+  font-weight: 300;
 }
 
 .new-reminder--heading {
   margin: 0;
-
   font-family: 'Oswald', sans-serif;
   font-size: 32px;
   font-weight: lighter;
@@ -75,67 +64,65 @@ a {
   width: 400px;
 
   .title {
-    padding-left: 40px;
     padding-top: 5px;
+    padding-left: 40px;
     font-weight: 400;
   }
 
   .date {
-    padding-left: 40px;
     padding-bottom: 5px;
+    padding-left: 40px;
+    color: $date-display-color;
     font-weight: 300;
-    color: #9E9E9E;
   }
 }
 
 .reminders-list {
   display: inline-block;
-  margin: 0 20px;
   width: 400px;
   height: 100%;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 20px;
+  border-right: 1px solid $border-hr-color;
+
+  .no-items-msg {
+    text-align: center;
+  }
 }
 
-.spec-reminder-display-item, .new-reminder {
-  margin-top: 10px;
-  position: fixed;
+.spec-reminder-display-item,
+.new-reminder {
   display: inline-block;
+  position: fixed;
   max-width: 480px;
+  margin-top: 10px;
   padding: 0 20px;
 }
 
 hr {
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
   width: 90%;
+  height: 0;
+  border: 0;
+  border-top: 1px solid $border-hr-color;
 }
 
 .reminder-item--title {
   margin-top: 0;
   font-family: 'Oswald', sans-serif;
-
   font-size: 32px;
   font-weight: 400;
 }
 
 .reminder-item--date {
+  color: $date-display-color;
   font-weight: 300;
-  color: #9E9E9E;
 }
-
-
 
 .btn {
   @include button-input-style;
-  background-color: white;
 
   &:hover {
     filter: opacity(90%);
   }
-
-
-
 }
 
 .btn-new {
@@ -143,50 +130,50 @@ hr {
   margin-right: 60px;
   margin-bottom: 10px;
   float: right;
-  background-color: #2980b9;
-  color: white;
+  background-color: $new-btn-bg-color;
+  color: $new-btn-text-color;
   font-size: 18px;
   font-weight: 300;
 
   &:hover {
-    background-color: #3498db;
+    background-color: $new-btn-hover-color;
   }
 }
 
 .btn-submit {
-  background-color: #27ae60;
-  color: white;
+  background-color: $submit-btn-bg-color;
+  color: $submit-btn-text-color;
   font-size: 18px;
   font-weight: 300;
 
   &:hover {
-    background-color: #2ecc71;
+    background-color: $submit-btn-hover-color;
   }
 }
 
-input, textarea {
+input,
+textarea {
   margin: 10px 0;
   padding: 10px 20px;
-  border: none;
+  border: 1px solid $input-placeholder-color;
   border-radius: 5px;
   outline: 0;
-  border: 1px solid #bdc3c7;
   font-size: 16px;
 }
 
-textarea {
-
-}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #bdc3c7;
+  color: $input-placeholder-color;
 }
+
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #bdc3c7;
+  color: $input-placeholder-color;
 }
+
 :-ms-input-placeholder { /* IE 10+ */
-  color: #bdc3c7;
+  color: $input-placeholder-color;
 }
+
 :-moz-placeholder { /* Firefox 18- */
-  color: #bdc3c7;
+  color: $input-placeholder-color;
 }

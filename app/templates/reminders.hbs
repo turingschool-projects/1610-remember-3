@@ -1,7 +1,9 @@
-{{outlet}}
-
 <div class='reminders-list'>
-  {{#each model as |reminder|}}
-  {{reminder-item reminder=reminder}}
+  {{#each sortedReminders as |reminder|}}
+    {{reminder-item reminder=reminder}}
+  {{else}}
+     <p class='no-items-msg'>Create a New Reminder!</p>
   {{/each}}
 </div>
+
+{{outlet}}

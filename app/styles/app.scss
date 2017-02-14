@@ -52,6 +52,7 @@ a {
   font-weight: 300;
 }
 
+.edit-reminder--heading, 
 .new-reminder--heading {
   margin: 0;
   font-family: 'Oswald', sans-serif;
@@ -90,7 +91,8 @@ a {
 }
 
 .spec-reminder-display-item,
-.new-reminder {
+.new-reminder,
+.edit-reminder {
   display: inline-block;
   position: fixed;
   max-width: 480px;

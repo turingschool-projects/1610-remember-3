@@ -15,11 +15,42 @@ test('editing a reminder title changes its title in list', function(assert) {
 
   andThen(function() {
     const titles = find('h3', '.reminders-list');
-    const titleFind = titles.filter(function() {
-      return this.innerText === 'Hello World'; 
+    const title = titles.filter(function() {
+      return this.innerText === 'Hello World';
     });
-    assert.equal(titleFind.length, 1);
+    assert.equal(title.length, 1);
   });
+});
+
+test('reverting a changes model back to original state', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/reminders/edit/1');
+
+  andThen(function() {
+    fillIn('.reminder-title', 'Hello World');
+  });
+
+  andThen(function() {
+    const titles = find('h3', '.reminders-list');
+    const title = titles.filter(function() {
+      return this.innerText === 'Hello World';
+    });
+    assert.equal(title.length, 1);
+  });
+
+  andThen(function() {
+    click('.btn-undo');
+  });
+
+  andThen(function() {
+    const titles = find('h3', '.reminders-list');
+    const title = titles.filter(function() {
+      return this.innerText === 'Hello World';
+    });
+    assert.equal(title.length, 0);
+  });
+
 });
 
 test('editing a reminder returns user to reminder item', function(assert) {

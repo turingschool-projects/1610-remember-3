@@ -16,6 +16,9 @@ export default Ember.Component.extend({
       this.model.save().then(() => {
         this.sendAction('showItem');
       });
+    },
+    undoChanges() {
+      this.model.rollbackAttributes();
     }
   }
 });

@@ -16,7 +16,7 @@ export default Ember.Component.extend({
       this.model.setProperties('title', 'date', 'notes');
       this.model.save().then(() => {
         this.get('router').transitionTo('reminders.reminder', [this.model.id.toString()]);
-      })
+      });
     }
   }
 });

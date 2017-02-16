@@ -1,0 +1,9 @@
+<div class='edit-reminder'>
+  <h3 class='edit-reminder--heading'> Edit Reminder </h3>
+    <form class='edit-reminder--form' {{action 'editReminder' on='submit'}}>
+      {{input name='title-input' placeholder='title' type='text' value=model.title class='reminder-title'}} <br>
+      {{pikaday-input name='date-input' value=model.date onSelection=(action (mut date)) format='MM/DD/YYYY'}} <br>
+      {{textarea name='notes' type='text' placeholder='notes' value=model.notes class='reminder-notes' cols='50' rows='5'}} <br>
+      <button class='btn btn-update' name='update-btn' type='submit'>Save</button>
+    </form>
+</div>

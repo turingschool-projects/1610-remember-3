@@ -64,8 +64,7 @@ a {
   width: 400px;
 
   .spec-reminder-list-item--title {
-    padding-top: 5px;
-    padding-left: 40px;
+    margin: 15px 40px;
     font-weight: 400;
 
     &.dirty {
@@ -75,8 +74,7 @@ a {
   }
 
   .spec-reminder-list-item--date {
-    padding-bottom: 5px;
-    padding-left: 40px;
+    margin: 10px 40px;
     color: $date-display-color;
     font-weight: 300;
   }
@@ -94,7 +92,7 @@ a {
   }
 }
 
-.spec-reminder-display-item,
+.show-reminder,
 .new-reminder,
 .edit-reminder {
   display: inline-block;
@@ -175,6 +173,23 @@ hr {
 
   &:hover {
     background-color: $edit-btn-hover-color;
+  }
+}
+
+.btn-delete {
+
+  background-color: $grey-2;
+  &:hover {
+    background-color: $red-1;
+  }
+
+  &.list-item {
+    margin-top: 0;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 12px;
+    padding: 5px 10px;
+    float: right;
   }
 }
 

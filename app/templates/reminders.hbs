@@ -1,6 +1,9 @@
 <div class='reminders-list'>
   {{#each sortedReminders as |reminder|}}
-    {{reminder-item reminder=reminder unsavedChanges=reminder.hasDirtyAttributes}}
+    {{reminder-item
+      reminder=reminder
+      backToReminders=(action 'goBackToRemindersList')
+      unsavedChanges=reminder.hasDirtyAttributes}}
   {{else}}
      <p class='no-items-msg'>Create a New Reminder!</p>
   {{/each}}

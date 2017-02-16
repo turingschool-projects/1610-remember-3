@@ -1,4 +1,5 @@
 <div class='spec-reminder-list-item'>
+  <button {{action 'deleteAReminder'}} class='btn btn-delete list-item' name='delete-btn' type='button'>Delete</button>
   {{#link-to "reminders.reminder" reminder}}
     <h3 class='spec-reminder-list-item--title {{if unsavedChanges 'dirty'}}'>{{reminder.title}}</h3>
     <p class='spec-reminder-list-item--date'>{{moment-from-now reminder.date}}</p>

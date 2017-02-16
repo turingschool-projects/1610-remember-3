@@ -35,3 +35,18 @@ test('shows message if no reminders to display', function(assert) {
     assert.equal($('.no-items-msg').length, 1);
   });
 });
+
+test('clicking delete button removes reminder from list', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/');
+  andThen(function() {
+    assert.equal($('.reminder-item').length, 5);
+  });
+
+  click('.btn-delete');
+
+  andThen(function() {
+    assert.equal($('.reminder-item').length, 4);
+  });
+});

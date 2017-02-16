@@ -60,3 +60,19 @@ test('reverting a changes model back to original state', function(assert) {
     assert.equal(title.length, 0);
   });
 });
+
+
+test('unsaved changes show visual cue in reminders list', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/reminders/1/edit');
+
+  andThen(function() {
+    fillIn('.reminder-title', 'Hello World');
+  });
+
+  andThen(function() {
+    const title = find('.dirty');
+    assert.equal(title.length, 1);
+  });
+});

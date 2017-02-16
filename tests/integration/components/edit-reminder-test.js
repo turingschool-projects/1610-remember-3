@@ -7,5 +7,5 @@ moduleForComponent('edit-reminder', 'Integration | Component | edit reminder', {
 
 test('it renders', function(assert) {
   this.render(hbs`{{edit-reminder}}`);
-  assert.equal(this.$().text().replace(/\s/g, ''), 'EditReminderSave');
+  assert.equal(this.$().text().replace(/\s/g, ''), 'EditReminderSaveUndo');
 });

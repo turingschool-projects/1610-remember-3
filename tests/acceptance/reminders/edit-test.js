@@ -30,3 +30,33 @@ test('editing a reminder returns user to reminder item', function(assert) {
     assert.equal(currentURL(), '/reminders/1');
   });
 });
+
+test('reverting a changes model back to original state', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/reminders/1/edit');
+
+  andThen(function() {
+    fillIn('.reminder-title', 'Hello World');
+  });
+
+  andThen(function() {
+    const titles = find('h3', '.reminders-list');
+    const title = titles.filter(function() {
+      return this.innerText === 'Hello World';
+    });
+    assert.equal(title.length, 1);
+  });
+
+  andThen(function() {
+    click('.btn-undo');
+  });
+
+  andThen(function() {
+    const titles = find('h3', '.reminders-list');
+    const title = titles.filter(function() {
+      return this.innerText === 'Hello World';
+    });
+    assert.equal(title.length, 0);
+  });
+});

@@ -106,7 +106,7 @@ hr {
   border-top: 1px solid $border-hr-color;
 }
 
-.rspec-reminder-display-item--title {
+.spec-reminder-display-item--title {
   margin-top: 0;
   font-family: 'Oswald', sans-serif;
   font-size: 32px;
@@ -120,10 +120,8 @@ hr {
 
 .btn {
   @include button-input-style;
-
-  &:hover {
-    filter: opacity(90%);
-  }
+  color: $new-btn-text-color;
+  font-size: 16px;
 }
 
 .btn-new {
@@ -132,7 +130,6 @@ hr {
   margin-bottom: 10px;
   float: right;
   background-color: $new-btn-bg-color;
-  color: $new-btn-text-color;
   font-size: 18px;
   font-weight: 300;
 
@@ -141,14 +138,34 @@ hr {
   }
 }
 
-.btn-submit {
+.btn-submit,
+.btn-update {
   background-color: $submit-btn-bg-color;
   color: $submit-btn-text-color;
-  font-size: 18px;
   font-weight: 300;
 
   &:hover {
     background-color: $submit-btn-hover-color;
+  }
+}
+
+.btn-undo {
+  background-color: $undo-btn-bg-color;
+  color: $new-btn-text-color;
+  font-weight: 300;
+
+  &:hover {
+    background-color: $undo-btn-hover-color;
+  }
+}
+
+.btn-edit {
+  background-color: $edit-btn-bg-color;
+  color: $new-btn-text-color;
+  font-weight: 300;
+
+  &:hover {
+    background-color: $edit-btn-hover-color;
   }
 }
 

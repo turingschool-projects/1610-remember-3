@@ -3,5 +3,5 @@
   <p class="spec-reminder-display-item--date">{{moment-format model.date 'dddd, MMMM Do YYYY, h:mm:ss a'}}</p>
   <p class="spec-reminder-display-item--notes">{{model.notes}}</p>
     {{#Link-to 'reminders.reminder.edit' tagName='button' class='btn btn-edit'}} Edit {{/Link-to}}
-  <button {{action 'deleteReminder'}} class='btn btn-delete' name='delete-btn' type='button'>Delete</button>
+  <button {{action 'deleteReminder'}} class='btn btn-delete spec-btn-show-delete' name='delete-btn' type='button'>Delete</button>
 </div>
